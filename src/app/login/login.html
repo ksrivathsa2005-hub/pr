@@ -1,0 +1,23 @@
+<div class="page">
+  <div class="card">
+    <h2>Login</h2>
+    <form #loginForm="ngForm" (ngSubmit)="login()">
+      <input type="text" name="username" [(ngModel)]="username" required minlength="3" placeholder="Username">
+      <div *ngIf="loginForm.submitted && loginForm.controls['username']?.invalid" class="error">
+        <small *ngIf="loginForm.controls['username']?.errors?.['required']">Username is required.</small>
+        <small *ngIf="loginForm.controls['username']?.errors?.['minlength']">Username must be at least 3 characters.</small>
+      </div>
+      <input type="password" name="password" [(ngModel)]="password" required minlength="6" placeholder="Password">
+      <div *ngIf="loginForm.submitted && loginForm.controls['password']?.invalid" class="error">
+        <small *ngIf="loginForm.controls['password']?.errors?.['required']">Password is required.</small>
+        <small *ngIf="loginForm.controls['password']?.errors?.['minlength']">Password must be at least 6 characters.</small>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+    <p>
+      New user?
+      <a routerLink="/register">Create account</a>
+    </p>
+  </div>
+</div>
+<router-outlet></router-outlet>

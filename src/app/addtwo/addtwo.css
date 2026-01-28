@@ -1,0 +1,83 @@
+/* AddTwo / Simple Calculator styles */
+.page {
+	min-height: 60vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+}
+
+.card {
+	background: #ffffff;
+	width: 420px;
+	padding: 28px;
+	border-radius: 12px;
+	box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+	text-align: center;
+}
+
+h1 {
+	margin: 0 0 18px 0;
+	font-size: 1.5rem;
+	color: #223;
+}
+
+.row {
+	display: flex;
+	gap: 12px;
+	margin-bottom: 16px;
+}
+
+input[type="text"] {
+	flex: 1;
+	padding: 10px 12px;
+	border: 1px solid #e6e9ee;
+	border-radius: 8px;
+	font-size: 14px;
+	background: #fbfdff;
+}
+
+.ops {
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+	margin-bottom: 16px;
+}
+
+.ops button {
+	padding: 10px 14px;
+	border-radius: 8px;
+	border: none;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 16px;
+	background: linear-gradient(90deg,#00b894,#00cec9);
+	color: white;
+	box-shadow: 0 6px 18px rgba(0,184,148,0.12);
+}
+
+.ops button.clear {
+	background: #f1f1f1;
+	color: #333;
+	box-shadow: none;
+}
+
+.result {
+	min-height: 36px;
+}
+
+.result .value {
+	font-size: 1.15rem;
+	color: #111;
+	font-weight: 700;
+}
+
+.error {
+	color: #d32f2f;
+	font-size: 0.95rem;
+}
+
+@media (max-width: 480px) {
+	.card { width: 100%; padding: 18px; }
+	.row { flex-direction: column; }
+}

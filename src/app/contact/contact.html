@@ -1,0 +1,30 @@
+<h1>Contact Messages</h1>
+
+<div class="contact-form">
+  <h2>Add New Contact</h2>
+  <input 
+    type="text" 
+    placeholder="Enter name" 
+    [(ngModel)]="newUser.name"
+  />
+  <input 
+    type="email" 
+    placeholder="Enter email" 
+    [(ngModel)]="newUser.email"
+  />
+  <textarea 
+    placeholder="Enter message"
+    [(ngModel)]="newUser.message"
+  ></textarea>
+  <button (click)="addContact()">Add Contact</button>
+</div>
+
+<hr>
+
+<h2>Contact List</h2>
+<div *ngFor="let user of users" class="contact-card">
+    <h3>{{ user.name }}</h3>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Message:</strong> {{ user.message }}</p>
+    <hr>
+</div>

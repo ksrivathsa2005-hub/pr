@@ -1,0 +1,28 @@
+<div class="page">
+  <div class="card">
+    <h2>Register</h2>
+    <form #registerForm="ngForm" (ngSubmit)="register()">
+      <input type="text" name="name" [(ngModel)]="name" required minlength="3" placeholder="Name">
+      <div *ngIf="registerForm.submitted && registerForm.controls['name']?.invalid" class="error">
+        <small *ngIf="registerForm.controls['name']?.errors?.['required']">Name is required.</small>
+        <small *ngIf="registerForm.controls['name']?.errors?.['minlength']">Name must be at least 3 characters.</small>
+      </div>
+      <input type="email" name="email" [(ngModel)]="email" required email placeholder="Email">
+      <div *ngIf="registerForm.submitted && registerForm.controls['email']?.invalid" class="error">
+        <small *ngIf="registerForm.controls['email']?.errors?.['required']">Email is required.</small>
+        <small *ngIf="registerForm.controls['email']?.errors?.['email']">Email must be valid.</small>
+      </div>
+      <input type="password" name="password" [(ngModel)]="password" required minlength="6" placeholder="Password">
+      <div *ngIf="registerForm.submitted && registerForm.controls['password']?.invalid" class="error">
+        <small *ngIf="registerForm.controls['password']?.errors?.['required']">Password is required.</small>
+        <small *ngIf="registerForm.controls['password']?.errors?.['minlength']">Password must be at least 6 characters.</small>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+    <p>
+      Already have an account?
+      <a routerLink="/login">Login</a>
+    </p>
+  </div>
+</div>
+<router-outlet></router-outlet>
